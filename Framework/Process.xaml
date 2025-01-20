@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,1191</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>938,1191</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -1529,15 +1529,9 @@
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
-                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPathConfig" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
-                                    <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Email Domestic&quot;}" />
-                                  </InArgument>
-                                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
-                                    <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Email" />
-                                  </OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">[strPathConfig]</InArgument>
+                                  <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Email Domestic"}]</InArgument>
+                                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Email]</OutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                               <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Email_SFTP" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Accounting/Auto posting payment Oversea" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[strPasswordRPA]" Username="[strEmailRPA]" />
@@ -1549,7 +1543,7 @@
                                   <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(strPathResult)]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[multiAttach]" Body="[Email(&quot;Email Mail Body Success&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[strEmailRPA]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="SendMail_4" IgnoreCRL="False" IsBodyHtml="True" Port="[Integer.Parse( in_Config(&quot;Port&quot;).ToString)]" SecureConnection="None" SecurePassword="[strPasswordRPA]" Server="[in_Config(&quot;Server&quot;).ToString]" Subject="[Email(&quot;Subject Mail Success&quot;).ToString+&quot;  &quot;+strBU+&quot;   &quot;+dCurrenDate.ToString(&quot;dd.MM.yyyy&quot;)]" To="[Email(&quot;Email Mail To Success&quot;).ToString]">
+                              <ui:SendMail Bcc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[multiAttach]" Body="[Email(&quot;Email Mail Body Success&quot;).ToString]" Cc="[Email(&quot;Email Mail CC Success&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[strEmailRPA]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,184" sap2010:WorkflowViewState.IdRef="SendMail_4" IgnoreCRL="False" IsBodyHtml="True" Port="[Integer.Parse( in_Config(&quot;Port&quot;).ToString)]" SecureConnection="None" SecurePassword="[strPasswordRPA]" Server="[in_Config(&quot;Server&quot;).ToString]" Subject="[Email(&quot;Subject Mail Success&quot;).ToString+&quot;  &quot;+strBU+&quot;   &quot;+dCurrenDate.ToString(&quot;dd.MM.yyyy&quot;)]" To="[Email(&quot;Email Mail To Success&quot;).ToString]">
                                 <ui:SendMail.Files>
                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
                                 </ui:SendMail.Files>
