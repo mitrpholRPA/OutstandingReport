@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>652,1192</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>938,1191</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -161,7 +161,7 @@
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="662,1127" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="662,1126" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
       <Variable x:TypeArguments="x:String" Name="strPathResult" />
@@ -1283,19 +1283,19 @@
                             <av:PointCollection x:Key="ConnectorLocation">215,818.4 215,910 285,910</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Domestic Group By Empty" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                        <Sequence DisplayName="Domestic Group By Empty" sap:VirtualizedContainerService.HintSize="784,2841" sap2010:WorkflowViewState.IdRef="Sequence_45">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="722,2657" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" InstanceCachePeriod="3000" WorkbookPath="[strPathFileResult]">
+                          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="722,2753" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" InstanceCachePeriod="3000" WorkbookPath="[strPathFileResult]">
                             <ui:ExcelApplicationScope.Body>
                               <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,2524" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,2620" sap2010:WorkflowViewState.IdRef="Sequence_53">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:Int32" Name="index" />
                                     <Variable x:TypeArguments="x:Int32" Name="row" />
@@ -1434,7 +1434,7 @@
                                   <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_Summary]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="626,120" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="[strSheetSummary]" StartingCell="[&quot;A&quot;+row.ToString]" />
                                   <ui:ExcelWriteCell Cell="D1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="626,120" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_19" SheetName="[strSheetSummary]" Text="[&quot;=SUM(D5:D&quot;+(dt_Summary.RowCount+4).ToString+&quot;)&quot;]" />
                                   <ui:ExcelWriteCell Cell="D2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="626,120" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_20" SheetName="[strSheetSummary]" Text="[&quot;=SUM(D5:D&quot;+strEndRowColor+&quot;)&quot;]" />
-                                  <If Condition="[not String.IsNullOrEmpty(strEndRowColor)]" sap:VirtualizedContainerService.HintSize="626,561" sap2010:WorkflowViewState.IdRef="If_13">
+                                  <If Condition="[not String.IsNullOrEmpty(strEndRowColor)]" sap:VirtualizedContainerService.HintSize="626,657" sap2010:WorkflowViewState.IdRef="If_13">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1452,12 +1452,13 @@
                                       </Sequence>
                                     </If.Then>
                                     <If.Else>
-                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,199" sap2010:WorkflowViewState.IdRef="Sequence_66">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
+                                        <ui:ExcelWriteCell Cell="D2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="354,111" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_23" SheetName="[strSheetSummary]" Text="0)" />
                                       </Sequence>
                                     </If.Else>
                                   </If>
@@ -1480,7 +1481,7 @@
                                 <av:Size x:Key="ShapeSize">110,70</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="688,2100" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                            <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_89">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="sd:DataTable" Name="dt_Email" />
                                 <Variable x:TypeArguments="x:String" Name="variable1" />
@@ -1548,9 +1549,7 @@
                                             <ui:SendMail Bcc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[dt_Email.Rows(0).Item(&quot;Email Body&quot;).ToString]" Cc="[dt_Email.Rows(0).Item(&quot;Email CC&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[strEmailRPA]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,178" sap2010:WorkflowViewState.IdRef="SendMail_7" IgnoreCRL="False" IsBodyHtml="True" Port="[Integer.Parse( in_Config(&quot;Port&quot;).ToString)]" SecureConnection="None" SecurePassword="[strPasswordRPA]" Server="[in_Config(&quot;Server&quot;).ToString]" Subject="[dt_Email.Rows(0).Item(&quot;Email Subject&quot;).ToString+&quot;  &quot;+strBU+&quot;   &quot;+dCurrenDate.ToString(&quot;dd.MM.yyyy&quot;)]" To="[dt_Email.Rows(0).Item(&quot;Email To&quot;).ToString]">
                                               <ui:SendMail.Files>
                                                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                                  <InArgument x:TypeArguments="x:String">
-                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strFileSendMail" />
-                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String">[strFileSendMail]</InArgument>
                                                 </scg:List>
                                               </ui:SendMail.Files>
                                             </ui:SendMail>
@@ -1862,6 +1861,6 @@
       <x:Reference>__ReferenceID7</x:Reference>
       <x:Reference>__ReferenceID0</x:Reference>
     </Flowchart>
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="600,80" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="600,79" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
   </Sequence>
 </Activity>
